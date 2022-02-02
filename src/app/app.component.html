@@ -1,18 +1,10 @@
-<div class="auth" *ngIf="!authToken">
-  <div>
-    <label for="username">User Name</label>
-    <input id="username" [(ngModel)]="username">
-  </div>
-
-  <div>
-    <label for="password">Password</label>
-    <input id="password" [(ngModel)]="password">
-  </div>
-
-  <button (click)="submit()">LOGIN</button>
+<div>
+  <label for="authToken">token</label>
+    <input id="password" [(ngModel)]="authToken">
+    <button (click)="getUser()">LOGIN</button>
 </div>
 
-<div class="profile" *ngIf="authToken">
+<div class="profile" *ngIf="profile">
   <div>{{profile | json}}</div>
   <button (click)="logout()">LOGOUT</button>
 </div>

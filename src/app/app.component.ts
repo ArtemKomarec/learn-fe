@@ -43,5 +43,17 @@ export class AppComponent {
 
   logout() {
     this.authToken = undefined;
+    this.profile = undefined;
+  }
+
+  getUser() {
+    this.httpClient.get('http://localhost:3000/profile', { headers: { 'Authorization': `Bearer ${this.authToken}` } })
+    .subscribe(
+      (response: any) => {
+        this.profile = response;
+      }, (e) => {
+        console.log('>>', e);
+
+      });
   }
 }
