@@ -1,11 +1,12 @@
 <div *ngIf='!profile' class="text-field">
   <label for="authToken" class="text-field__label">Token :</label>
-    <input id="password" [(ngModel)]="authToken" class="text-field__input">
+    <input id="authToken" [(ngModel)]="authToken" class="text-field__input">
+    <span *ngIf = 'error' class="error">{{error}}</span>
     <button (click)="getUser()" id="button-1" class="button">LOGIN</button>
 </div>
 
 <div class="profile" *ngIf="profile">
   <div>User name:{{profile.username}}</div>
   <div>User id: {{profile.userId}}</div>
-  <button (click)="logout()">LOGOUT</button>
+  <button (click)="logout()" id="button-1" class="button">LOGOUT</button>
 </div>

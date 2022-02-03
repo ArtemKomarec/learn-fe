@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { mergeMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +9,7 @@ import { mergeMap, tap } from 'rxjs';
 export class AppComponent {
   authToken?: string;
   profile?: any;
+  error: string ='';
 
   constructor(
     private readonly httpClient: HttpClient,
@@ -28,7 +28,8 @@ export class AppComponent {
         this.profile = response;
       }, (e) => {
         console.log('>>', e);
-
+        this.error = 'Invalid. Try again'
+        console.log(this.error)
       });
   }
 }
