@@ -1,7 +1,7 @@
-<div>
-  <label for="authToken">token</label>
-    <input id="password" [(ngModel)]="authToken">
-    <button (click)="getUser()">LOGIN</button>
+<div *ngIf='!profile' class="text-field">
+  <label for="authToken" class="text-field__label">Token :</label>
+    <input id="password" [(ngModel)]="authToken" class="text-field__input">
+    <button (click)="getUser()" id="button-1" class="button">LOGIN</button>
 </div>
 
 <div class="profile" *ngIf="profile">
