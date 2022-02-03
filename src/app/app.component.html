@@ -5,6 +5,7 @@
 </div>
 
 <div class="profile" *ngIf="profile">
-  <div>{{profile | json}}</div>
+  <div>User name:{{profile.username}}</div>
+  <div>User id: {{profile.userId}}</div>
   <button (click)="logout()">LOGOUT</button>
 </div>
